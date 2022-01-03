@@ -93,7 +93,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
-			menuItem.scale.set(0.8, 0.8);
+			menuItem.scale.set(0.8, 0.8)
 			menuItem.ID = i;
 			menuItem.screenCenter(X);
 			menuItems.add(menuItem);
@@ -219,6 +219,10 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new StoryMenuState());
 									case 'freeplay':
 										MusicBeatState.switchState(new FreeplayState());
+									case 'awards':
+										MusicBeatState.switchState(new AchievementsMenuState());
+									case 'credits':
+										MusicBeatState.switchState(new CreditsState());
 									case 'options':
 										MusicBeatState.switchState(new OptionsState());
 								}
