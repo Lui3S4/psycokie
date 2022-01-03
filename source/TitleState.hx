@@ -39,6 +39,7 @@ class TitleState extends MusicBeatState
 	static var initialized:Bool = false;
 
 	var blackScreen:FlxSprite;
+	var backgroundTitle:FlxSprite;
 	var credGroup:FlxGroup;
 	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
@@ -175,6 +176,10 @@ class TitleState extends MusicBeatState
 			// IF THIS PR IS HERE IF ITS ACCEPTED UR GOOD TO GO
 			// https://github.com/HaxeFlixel/flixel-addons/pull/348
 
+    backgroundTitle = new FlxSprite().loadGraphic(Paths.image('menuDesat'));
+    backgroundTitle.screenCenter();
+    backgroundTitle.antialiasing = ClientPrefs.globalantialiasing;
+  
 			// var music:FlxSound = new FlxSound();
 			// music.loadStream(Paths.music('freakyMenu'));
 			// FlxG.sound.list.add(music);
@@ -221,6 +226,7 @@ class TitleState extends MusicBeatState
 		}
 		gfDance.antialiasing = ClientPrefs.globalAntialiasing;
 		add(gfDance);
+		add(backgroundTitle);
 		gfDance.shader = swagShader.shader;
 		add(logoBl);
 		//logoBl.shader = swagShader.shader;
